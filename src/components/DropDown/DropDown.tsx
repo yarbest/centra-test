@@ -19,6 +19,8 @@ export interface DropDownProps {
 const DropDown = ({ options, title, icon, className, onSelect, selectedOptionProp }: DropDownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<OptionType>();
+  const [searchValue, setSearchValue] = useState(selectedOption?.value || '');
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useOnClickOutside(dropdownRef, () => setIsOpen(false));
@@ -28,10 +30,20 @@ const DropDown = ({ options, title, icon, className, onSelect, selectedOptionPro
 
   useEffect(() => onSelect(selectedOption), [selectedOption, onSelect]);
   useEffect(() => setSelectedOption(selectedOptionProp), [selectedOptionProp]);
+  useEffect(() => setSearchValue(selectedOption?.value || ''), [selectedOption]);
+
   return (
     <div ref={dropdownRef} className={classNames(s.DropDown, className)}>
-      <DropDownHeader title={title} icon={icon} isOpen={isOpen} onClick={handleOpen} selectedOption={selectedOption} />
-      <DropDownList options={options} isOpen={isOpen} onSelect={handleSelect} selectedOption={selectedOption} />
+      <DropDownHeader
+        searchValue={searchValue}
+        onSearchValueChange={setSearchValue}
+        title={title}
+        icon={icon}
+        isOpen={isOpen}
+        onClick={handleOpen}
+        selectedOption={selectedOption}
+      />
+      <DropDownList searchValue={searchValue} options={options} isOpen={isOpen} onSelect={handleSelect} selectedOption={selectedOption} />
     </div>
   );
 };

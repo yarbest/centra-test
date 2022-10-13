@@ -36,8 +36,12 @@ const Card = ({ flight }: CardProps) => {
           {connections.length > maxConnections && <span>+ {connections.length - maxConnections} more</span>}
         </div>
         <div className={s.Card__buttons}>
-          <Button onClick={handleChooseFrom}>Start from</Button>
-          <Button onClick={handleChooseTo}>Go to</Button>
+          <Button onClick={handleChooseFrom}>
+            <a href="#search">Start from</a>
+          </Button>
+          <Button onClick={handleChooseTo}>
+            <a href="#search">Go to</a>
+          </Button>
         </div>
       </div>
     </div>

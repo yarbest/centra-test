@@ -32,7 +32,7 @@ const Search = () => {
   );
 
   return (
-    <div className={s.Search}>
+    <div id="search" className={s.Search}>
       <DropDown
         className={s.Search__dropdown}
         onSelect={handleSelectFrom}

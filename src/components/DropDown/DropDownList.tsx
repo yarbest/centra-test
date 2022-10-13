@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useMemo } from 'react';
 import classNames from 'classnames';
 
 import { useKeyBoardArrows } from 'src/hooks/useKeyBoardArrows';
@@ -10,9 +10,10 @@ export interface DropDownListProps {
   options: OptionType[];
   onSelect: (option: OptionType) => void;
   selectedOption?: OptionType;
+  searchValue: string;
 }
 
-const DropDownList = ({ isOpen, options, onSelect, selectedOption = options[0] }: DropDownListProps) => {
+const DropDownList = ({ isOpen, options, onSelect, selectedOption = options[0], searchValue }: DropDownListProps) => {
   const isOptionSelected = (option: OptionType) => option.id === selectedOption.id;
   const selectedOptionIndex = options.findIndex((option) => option.id === selectedOption.id);
   useKeyBoardArrows({
@@ -28,9 +29,14 @@ const DropDownList = ({ isOpen, options, onSelect, selectedOption = options[0] }
     disabled: !isOpen,
   });
 
+  const searchedOptions = useMemo(
+    () => options.filter((option) => option.value.toLowerCase().includes(searchValue.toLowerCase())),
+    [searchValue, options]
+  );
+
   return (
     <ul className={classNames(s.DropDownList, { [s.DropDownList_open]: isOpen })}>
-      {options.map((option, i) => (
+      {(searchValue ? searchedOptions : options).map((option, i) => (
         <Fragment key={option.id}>
           <li
             onClick={() => onSelect(option)}

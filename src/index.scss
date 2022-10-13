@@ -33,6 +33,7 @@
 html {
   height: 100%;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,17 +43,9 @@ body {
   font-weight: 400;
 }
 
-.mb-1 {
-  margin-bottom: 0.5rem;
-}
-.mt-1 {
-  margin-top: 0.5rem;
-}
-.ml-1 {
-  margin-left: 0.5rem;
-}
-.mr-1 {
-  margin-right: 0.5rem;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 @mixin scrollbar {
