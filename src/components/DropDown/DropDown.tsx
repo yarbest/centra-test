@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 
 import { useOnClickOutside } from 'src/hooks/useClickOutside';
@@ -12,9 +12,11 @@ export interface DropDownProps {
   title: React.ReactNode;
   icon?: React.ReactNode;
   className?: string;
+  onSelect: (option?: OptionType) => void;
+  selectedOptionProp?: OptionType;
 }
 
-const DropDown = ({ options, title, icon, className }: DropDownProps) => {
+const DropDown = ({ options, title, icon, className, onSelect, selectedOptionProp }: DropDownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<OptionType>();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -23,6 +25,9 @@ const DropDown = ({ options, title, icon, className }: DropDownProps) => {
 
   const handleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
   const handleSelect = useCallback((option: OptionType) => setSelectedOption(option), []);
+
+  useEffect(() => onSelect(selectedOption), [selectedOption, onSelect]);
+  useEffect(() => setSelectedOption(selectedOptionProp), [selectedOptionProp]);
   return (
     <div ref={dropdownRef} className={classNames(s.DropDown, className)}>
       <DropDownHeader title={title} icon={icon} isOpen={isOpen} onClick={handleOpen} selectedOption={selectedOption} />

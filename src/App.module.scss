@@ -7,6 +7,7 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 480px));
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 3rem;
   }
 }
