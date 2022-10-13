@@ -49,6 +49,7 @@
 
 .DropDownList {
   position: absolute;
+  z-index: 100;
   left: 0;
   max-height: 220px;
   opacity: 0;

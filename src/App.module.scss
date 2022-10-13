@@ -1,0 +1,12 @@
+.App {
+  &__container {
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 1680px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 480px));
+  }
+}
