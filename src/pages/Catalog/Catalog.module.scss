@@ -1,3 +1,5 @@
+@import 'src/index.scss';
+
 .Catalog {
   &__container {
     padding: 40px 20px;
@@ -9,5 +11,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     gap: 3rem;
+  }
+
+  @media (max-width: $medium-breakpoint) {
+    &__cards {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: $small-breakpoint) {
+    &__cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import 'src/index.scss';
+
 .Card {
   position: relative;
   height: 380px;
@@ -40,6 +42,9 @@
     padding: 3rem;
     transition: 0.5s;
     transform: translateY(57%);
+    @media (max-width: $small-breakpoint) {
+      transform: translateY(60%);
+    }
   }
   &__title {
     display: flex;

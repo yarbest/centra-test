@@ -7,3 +7,4 @@ export { ReactComponent as StarHalfSVG } from './starHalf.svg';
 export { ReactComponent as StarEmptySVG } from './starEmpty.svg';
 export { ReactComponent as ArrowLeftSVG } from './arrowLeft.svg';
 export { ReactComponent as FlightSVG } from './flight.svg';
+export { ReactComponent as FlightSmallSVG } from './flightSmall.svg';

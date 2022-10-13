@@ -53,6 +53,11 @@ a {
   color: inherit;
 }
 
+$big-breakpoint: 1439px;
+$semi-big-breakpoint: 1199px;
+$medium-breakpoint: 767px;
+$small-breakpoint: 575px;
+
 @mixin scrollbar {
   &::-webkit-scrollbar {
     width: 9px;

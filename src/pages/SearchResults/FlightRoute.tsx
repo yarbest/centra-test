@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'src/components/Button';
+import { useMediaQuery } from 'src/hooks/useMediaQuery';
 import { numToArr } from 'src/utils';
 
 import s from './SearchResults.module.scss';
@@ -11,16 +12,19 @@ interface FlightRouteProps {
 }
 
 const FlightRoute = ({ from, to, routes }: FlightRouteProps) => {
-  const maxDots = 40;
+  const mediumScreen = useMediaQuery('(max-width: 1199px)');
+  const smallScreen = useMediaQuery('(max-width: 767px)');
+
+  const maxDots = mediumScreen ? (smallScreen ? 18 : 25) : 40;
 
   const getDotsBetweenOutline = (changesLength: number) => {
     const rangesWithDots = changesLength! + 1;
-    const dotsBetweenOutline = Math.floor(40 / rangesWithDots);
+    const dotsBetweenOutline = Math.floor(maxDots / rangesWithDots);
     return dotsBetweenOutline;
   };
 
   const isOutlined = (idx: number, changesLength: number) => {
-    return idx > 0 && idx < maxDots - 1 && idx % getDotsBetweenOutline(changesLength) === 0;
+    return idx > 0 && idx < maxDots - 2 && idx % getDotsBetweenOutline(changesLength) === 0;
   };
 
   return (

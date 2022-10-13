@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import FlightRoute from './FlightRoute';
 import { useTypedSelector } from 'src/hooks/reduxHooks';
-import { ArrowLeftSVG, FlightSVG } from 'src/assets/svg';
+import { ArrowLeftSVG, FlightSVG, FlightSmallSVG } from 'src/assets/svg';
 
 import s from './SearchResults.module.scss';
 
@@ -25,6 +25,8 @@ const SearchResults = () => {
 
       <div className={s.SearchResults__body}>
         <FlightSVG className={s.SearchResults__flight_icon} />
+        <FlightSmallSVG className={s.SearchResults__flight_icon_small} />
+
         <div className={s.SearchResults__body__from}>
           <div onClick={() => navigate('/catalog')} className={s.SearchResults__back}>
             <ArrowLeftSVG />

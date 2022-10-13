@@ -1,9 +1,11 @@
+@import 'src/index.scss';
+
 .SearchResults {
   height: 100%;
   position: relative;
 
   &__background {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
@@ -29,12 +31,26 @@
     height: 100%;
     display: flex;
   }
-  &__flight_icon {
+  &__flight_icon,
+  &__flight_icon_small {
     position: absolute;
     left: 50%;
     top: 130px;
     transform: translateX(-50%);
   }
+  &__flight_icon {
+    @media (max-width: $big-breakpoint) {
+      display: none;
+    }
+  }
+  &__flight_icon_small {
+    display: none;
+    @media (max-width: $big-breakpoint) {
+      display: block;
+      top: 70px;
+    }
+  }
+
   &__body__from,
   &__body__to {
     flex-grow: 1;
@@ -42,6 +58,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: $big-breakpoint) {
+      padding: 10rem 2rem 2rem;
+    }
   }
 
   &__back {
@@ -63,17 +82,28 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.262);
     }
+
+    @media (max-width: $medium-breakpoint) {
+      left: 20px;
+    }
   }
   &__country {
     margin-bottom: 25px;
     color: #fff;
     font-weight: 700;
     font-size: 4rem;
+    @media (max-width: $small-breakpoint) {
+      font-size: 2rem;
+    }
   }
   &__airport {
     font-size: 2.4rem;
     font-weight: 600;
     color: #fff;
+    @media (max-width: $small-breakpoint) {
+      font-size: 1.6rem;
+      text-align: center;
+    }
   }
 
   &__routes {
@@ -81,6 +111,11 @@
     left: 100px;
     right: 100px;
     top: 40%;
+
+    @media (max-width: $medium-breakpoint) {
+      left: 10px;
+      right: 10px;
+    }
   }
 }
 
@@ -96,15 +131,32 @@
   box-shadow: 0px 4px 14px rgba(71, 67, 78, 0.12), 0px -4px 14px rgba(71, 67, 78, 0.12);
   border-radius: 16px;
 
+  @media (max-width: $semi-big-breakpoint) {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 3rem;
+  }
+
   &__route {
     display: flex;
     align-items: center;
     gap: 25px;
+
+    @media (max-width: $medium-breakpoint) {
+      gap: 5px;
+    }
   }
   &__contraction {
     font-size: 3.2rem;
     font-weight: 700;
     color: #141713;
+
+    @media (max-width: $medium-breakpoint) {
+      font-size: 2.4rem;
+    }
+    @media (max-width: $small-breakpoint) {
+      font-size: 1.6rem;
+    }
   }
   &__dots {
     display: flex;
