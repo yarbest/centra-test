@@ -8,6 +8,8 @@ export interface Flight {
   image: string;
   directConnections: string[];
   rating: number;
+  contraction: string;
+  routes: { id: number; changes: string[] }[];
 }
 
 interface Store {

@@ -16,6 +16,12 @@ export const data = [
     image: warsaw,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 5,
+    contraction: 'WAW',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+      { id: 3, changes: ['AMS', 'CDG', 'ALC'] },
+    ],
   },
   {
     id: 2,
@@ -24,6 +30,12 @@ export const data = [
     image: lisboa,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 4.5,
+    contraction: 'LIS',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+      { id: 3, changes: ['AMS', 'CDG', 'ALC'] },
+    ],
   },
   {
     id: 3,
@@ -32,6 +44,12 @@ export const data = [
     image: amsterdam,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 4.5,
+    contraction: 'AMS',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+      { id: 3, changes: ['AMS', 'CDG', 'ALC'] },
+    ],
   },
   {
     id: 4,
@@ -40,6 +58,11 @@ export const data = [
     image: paris,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 3.5,
+    contraction: 'PAR',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
   {
     id: 5,
@@ -48,6 +71,11 @@ export const data = [
     image: rome,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 3,
+    contraction: 'ROM',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
   {
     id: 6,
@@ -56,6 +84,11 @@ export const data = [
     image: dubai,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 2.5,
+    contraction: 'DUB',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
 
   {
@@ -65,6 +98,11 @@ export const data = [
     image: berlin,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 4,
+    contraction: 'BER',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
   {
     id: 8,
@@ -73,6 +111,11 @@ export const data = [
     image: barcelona,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 3.5,
+    contraction: 'BAR',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
   {
     id: 9,
@@ -81,5 +124,10 @@ export const data = [
     image: london,
     directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
     rating: 2.5,
+    contraction: 'LON',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+    ],
   },
 ];

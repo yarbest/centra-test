@@ -1,4 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Button from 'src/components/Button';
 import DropDown from 'src/components/DropDown/DropDown';
 import { AirplaneSVG, GeoSVG, SearchSVG } from 'src/assets/svg';
@@ -8,8 +10,9 @@ import { setFlightFrom, setFlightTo } from 'src/store/slices/flightsSlice';
 import s from './Search.module.scss';
 
 const Search = () => {
-  const { flights, flightFrom, flightTo } = useTypedSelector((state) => state.flightsSlice);
+  const navigate = useNavigate();
   const dispatch = useTypedDispatch();
+  const { flights, flightFrom, flightTo } = useTypedSelector((state) => state.flightsSlice);
 
   const dropdownOptions = useMemo(() => {
     const titleOption = { id: 0, value: 'Popular airports nearby', icon: <AirplaneSVG /> };
@@ -31,6 +34,10 @@ const Search = () => {
     [dispatch, flights]
   );
 
+  const handleSeacrhConfirm = () => {
+    navigate('/search-results');
+  };
+
   return (
     <div id="search" className={s.Search}>
       <DropDown
@@ -49,7 +56,7 @@ const Search = () => {
         title="To"
       />
       <div className={s.Search__divider}></div>
-      <Button primary className={s.Search__button}>
+      <Button onClick={handleSeacrhConfirm} primary className={s.Search__button} disabled={!flightFrom || !flightTo}>
         <SearchSVG />
       </Button>
     </div>

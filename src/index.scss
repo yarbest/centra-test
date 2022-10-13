@@ -9,6 +9,7 @@
   --btn-color-hover: #e15630;
   --text-color: #ffffff;
   --icon-color: #848ca2;
+  --primary-color: #e46846;
 }
 
 @font-face {
@@ -41,6 +42,10 @@ body {
   font-family: 'Inter';
   font-size: 1.6rem;
   font-weight: 400;
+}
+
+#root {
+  height: 100%;
 }
 
 a {

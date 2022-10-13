@@ -1,0 +1,144 @@
+.SearchResults {
+  height: 100%;
+  position: relative;
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+  }
+  &__background__overlay {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(71, 67, 78, 0.4) 2.19%, rgba(71, 67, 78, 0.1) 44.38%, rgba(71, 67, 78, 0) 100%);
+  }
+  &__background__from,
+  &__background__to {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    position: relative;
+    padding: 40px 0;
+    height: 100%;
+    display: flex;
+  }
+  &__flight_icon {
+    position: absolute;
+    left: 50%;
+    top: 130px;
+    transform: translateX(-50%);
+  }
+  &__body__from,
+  &__body__to {
+    flex-grow: 1;
+    padding: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__back {
+    position: absolute;
+    left: 80px;
+    top: 40px;
+
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 12px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.2s;
+    border-radius: 10px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.262);
+    }
+  }
+  &__country {
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 4rem;
+  }
+  &__airport {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__routes {
+    position: absolute;
+    left: 100px;
+    right: 100px;
+    top: 40%;
+  }
+}
+
+.FlightRoute {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+
+  padding: 3rem;
+  background: #ffffff;
+  border: 1px solid #ec957e;
+  box-shadow: 0px 4px 14px rgba(71, 67, 78, 0.12), 0px -4px 14px rgba(71, 67, 78, 0.12);
+  border-radius: 16px;
+
+  &__route {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  &__contraction {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #141713;
+  }
+  &__dots {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__dot_outline {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+  }
+  &__change {
+    position: absolute;
+    bottom: -30px;
+    left: -15px;
+    color: #141713;
+    font-weight: 600;
+  }
+  &__dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    span {
+      color: #141713;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,19 +1,12 @@
 import React, { memo } from 'react';
 import { StarFullSVG, StarHalfSVG, StarEmptySVG } from 'src/assets/svg';
+import { numToArr } from 'src/utils';
 
 import s from './Rating.module.scss';
 
 interface RatingProps {
   rating: number;
 }
-
-const numToArr = (num: number) => {
-  const result = [];
-  for (let i = 0; i < num; i++) {
-    result.push(i);
-  }
-  return result;
-};
 
 const Rating = ({ rating }: RatingProps) => {
   const fullStarsNumber = Math.floor(rating); //3
