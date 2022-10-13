@@ -10,6 +10,20 @@ import london from 'src/assets/images/london.jpg';
 
 export const data = [
   {
+    id: 0,
+    country: 'Popular Airports',
+    airport: 'Nearby',
+    image: warsaw,
+    directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
+    rating: 5,
+    contraction: 'POP',
+    routes: [
+      { id: 1, changes: ['AMS'] },
+      { id: 2, changes: ['AMS', 'CDG'] },
+      { id: 3, changes: ['AMS', 'CDG', 'ALC'] },
+    ],
+  },
+  {
     id: 1,
     country: 'Warsaw',
     airport: 'Warsaw Chopin Airport',

@@ -32,7 +32,7 @@ const FlightRoute = ({ from, to, routes }: FlightRouteProps) => {
       {routes?.map((route) => {
         const changes = [...route.changes];
         return (
-          <div className={s.FlightRoute}>
+          <div key={route.id} className={s.FlightRoute}>
             <div className={s.FlightRoute__route}>
               <span className={s.FlightRoute__contraction}>{from}</span>
               <div className={s.FlightRoute__dots}>

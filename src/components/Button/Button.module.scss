@@ -1,3 +1,5 @@
+@import 'src/index.scss';
+
 .Button {
   display: flex;
   align-items: center;
@@ -13,6 +15,11 @@
   color: var(--text-color);
   cursor: pointer;
   background-color: var(--btn-color);
+
+  @media (max-width: $small-breakpoint) {
+    padding: 5px;
+    font-size: 1.6rem;
+  }
 
   &:hover {
     background-color: var(--btn-color-hover);

@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from 'src/components/Button';
@@ -7,17 +7,22 @@ import { AirplaneSVG, GeoSVG, SearchSVG } from 'src/assets/svg';
 import { useTypedSelector, useTypedDispatch } from 'src/hooks/reduxHooks';
 import { OptionType } from 'src/components/DropDown/DropDownTypes';
 import { setFlightFrom, setFlightTo } from 'src/store/slices/flightsSlice';
+import SearchModal from './SearchModal';
 import s from './Search.module.scss';
 
 const Search = () => {
   const navigate = useNavigate();
   const dispatch = useTypedDispatch();
   const { flights, flightFrom, flightTo } = useTypedSelector((state) => state.flightsSlice);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [searchType, setSearchType] = useState<'From' | 'To'>();
 
   const dropdownOptions = useMemo(() => {
-    const titleOption = { id: 0, value: 'Popular airports nearby', icon: <AirplaneSVG /> };
-    const options = flights.map((flight) => ({ id: flight.id, value: `${flight.country}, ${flight.airport}`, icon: <GeoSVG /> }));
-    return [titleOption].concat(options);
+    return flights.map((flight, i) => ({
+      id: flight.id,
+      value: `${flight.country}, ${flight.airport}`,
+      icon: i ? <GeoSVG /> : <AirplaneSVG />,
+    }));
   }, [flights]);
 
   const handleSelectFrom = useCallback(
@@ -46,6 +51,10 @@ const Search = () => {
         options={dropdownOptions}
         selectedOptionProp={dropdownOptions.find((option) => option.id === flightFrom?.id)}
         title="From"
+        onClick={() => {
+          setSearchType('From');
+          setSearchModalOpen(true);
+        }}
       />
       <div className={s.Search__divider}></div>
       <DropDown
@@ -54,11 +63,23 @@ const Search = () => {
         options={dropdownOptions}
         selectedOptionProp={dropdownOptions.find((option) => option.id === flightTo?.id)}
         title="To"
+        onClick={() => {
+          setSearchType('To');
+          setSearchModalOpen(true);
+        }}
       />
       <div className={s.Search__divider}></div>
       <Button onClick={handleSeacrhConfirm} primary className={s.Search__button} disabled={!flightFrom || !flightTo}>
         <SearchSVG />
       </Button>
+
+      <SearchModal
+        title={searchType || ''}
+        isOpen={searchModalOpen}
+        onClose={setSearchModalOpen}
+        onSelect={(option) => (searchType === 'To' ? handleSelectTo(option) : searchType === 'From' && handleSelectFrom(option))}
+        options={dropdownOptions}
+      />
     </div>
   );
 };

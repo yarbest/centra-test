@@ -12,7 +12,7 @@ const Catalog = () => {
     <div className={s.Catalog__container}>
       <Search />
       <div className={s.Catalog__cards}>
-        {flights.map((flight) => (
+        {flights.slice(1).map((flight) => (
           <Card key={flight.id} flight={flight} />
         ))}
       </div>

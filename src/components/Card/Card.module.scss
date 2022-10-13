@@ -43,7 +43,8 @@
     transition: 0.5s;
     transform: translateY(57%);
     @media (max-width: $small-breakpoint) {
-      transform: translateY(60%);
+      transform: translateY(67%);
+      padding: 1rem;
     }
   }
   &__title {
@@ -54,11 +55,19 @@
   &__city {
     font-weight: 700;
     font-size: 3.2rem;
+
+    @media (max-width: $small-breakpoint) {
+      font-size: 2.4rem;
+    }
   }
   &__airport {
     margin-bottom: 1.6rem;
     font-weight: 600;
     font-size: 2.4rem;
+
+    @media (max-width: $small-breakpoint) {
+      font-size: 1.6rem;
+    }
   }
   &__connections_title {
     margin-bottom: 1rem;

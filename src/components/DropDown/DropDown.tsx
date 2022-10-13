@@ -14,9 +14,10 @@ export interface DropDownProps {
   className?: string;
   onSelect: (option?: OptionType) => void;
   selectedOptionProp?: OptionType;
+  onClick?: () => void;
 }
 
-const DropDown = ({ options, title, icon, className, onSelect, selectedOptionProp }: DropDownProps) => {
+const DropDown = ({ options, title, icon, className, onSelect, selectedOptionProp, onClick }: DropDownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<OptionType>();
   const [searchValue, setSearchValue] = useState(selectedOption?.value || '');
@@ -33,7 +34,7 @@ const DropDown = ({ options, title, icon, className, onSelect, selectedOptionPro
   useEffect(() => setSearchValue(selectedOption?.value || ''), [selectedOption]);
 
   return (
-    <div ref={dropdownRef} className={classNames(s.DropDown, className)}>
+    <div onClick={onClick} ref={dropdownRef} className={classNames(s.DropDown, className)}>
       <DropDownHeader
         searchValue={searchValue}
         onSearchValueChange={setSearchValue}
