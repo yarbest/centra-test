@@ -1,0 +1,25 @@
+.Search {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 42%;
+  padding: 16px 24px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0px 6px 12px rgba(71, 67, 78, 0.08), 0px -6px 8px rgba(71, 67, 78, 0.02);
+  border-radius: 16px;
+
+  &__dropdown {
+    flex-grow: 1;
+    width: 30%;
+  }
+  &__divider {
+    margin: 0 2px;
+    height: 60px;
+    width: 1px;
+    background-color: #e5e5e5;
+  }
+  &__button {
+    margin-left: 25px;
+  }
+}

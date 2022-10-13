@@ -1,0 +1,94 @@
+@import 'src/index.scss';
+
+.DropDown {
+  position: relative;
+}
+
+.DropDownHeader {
+  position: relative;
+  z-index: 1;
+  padding: 9px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #e3e6eb;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 2rem;
+
+    &__title {
+      color: #848ca2;
+      font-size: 1.6rem;
+    }
+    &__selected {
+      // overflow: hidden;
+      // white-space: nowrap;
+      // text-overflow: ellipsis;
+    }
+  }
+
+  &__icon {
+    width: 15px;
+    transition: 0.2s;
+    color: var(--icon-color);
+    &_open {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.DropDownList {
+  position: absolute;
+  left: 0;
+  max-height: 220px;
+  opacity: 0;
+  width: 100%;
+  transition: 0.5s;
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0px 6px 12px rgba(71, 67, 78, 0.08);
+  border-radius: 16px;
+  @include scrollbar();
+  transform: translateY(-20%);
+  pointer-events: none;
+  &_open {
+    transform: translateY(2%);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 13px;
+    color: #141713;
+    cursor: pointer;
+    &:hover,
+    &_selected {
+      background-color: #e3e6eb;
+    }
+    & svg {
+      width: 20px;
+      color: var(--icon-color);
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    width: 87%;
+    margin: 0 auto;
+    background-color: #e5e5e5;
+  }
+}
