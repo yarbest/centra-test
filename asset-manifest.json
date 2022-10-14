@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a561761.css",
+    "main.js": "/static/js/main.2b46e0e6.js",
+    "static/media/barcelona.jpg": "/static/media/barcelona.d64dcc82d4f5bcf71869.jpg",
+    "static/media/amsterdam.jpg": "/static/media/amsterdam.afa3a7e8a38f5b817aba.jpg",
+    "static/media/dubai.jpg": "/static/media/dubai.5a91b8db11faaadc7a24.jpg",
+    "static/media/lisboa.jpg": "/static/media/lisboa.712986392b511d03515a.jpg",
+    "static/media/warsaw.jpg": "/static/media/warsaw.8fafcec36ccf391bede3.jpg",
+    "static/media/rome.jpg": "/static/media/rome.74fbd7e63898bd087e9a.jpg",
+    "static/media/paris.jpg": "/static/media/paris.cfca4e18233894af05fb.jpg",
+    "static/media/london.jpg": "/static/media/london.baea2ebaf55fb04ce409.jpg",
+    "static/media/berlin.jpg": "/static/media/berlin.6974788d7d80ec479588.jpg",
+    "static/media/Inter-Bold.woff2": "/static/media/Inter-Bold.c08e610806161507e8e3.woff2",
+    "static/media/Inter-SemiBold.woff2": "/static/media/Inter-SemiBold.90f5c90fdecd8895f496.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.bd097ceff83f90802a12.woff2",
+    "static/media/flightSmall.svg": "/static/media/flightSmall.bcad7fae0c7977aa570dbf731a537e96.svg",
+    "static/media/flight.svg": "/static/media/flight.61b052aaf9d1f5a97ee956f86ae086c6.svg",
+    "static/media/airplane.svg": "/static/media/airplane.9c9d48697a8c9c54d0405d59667ee3c5.svg",
+    "static/media/search.svg": "/static/media/search.0507c39a2ae64cafbc4891553140f4bc.svg",
+    "static/media/starEmpty.svg": "/static/media/starEmpty.5d1722ca9f3cb6fe001a24d1472112c0.svg",
+    "static/media/close.svg": "/static/media/close.0e99d97813964149ab67485e3f714963.svg",
+    "static/media/starHalf.svg": "/static/media/starHalf.9844988259dba01a6b1c240db3a72fb0.svg",
+    "index.html": "/index.html",
+    "static/media/starFull.svg": "/static/media/starFull.48f7a286edd2816811a851ccebeeb573.svg",
+    "static/media/arrowLeft.svg": "/static/media/arrowLeft.c68b38e233d88cebcd33f6bf920d41fd.svg",
+    "static/media/geo.svg": "/static/media/geo.a3c8f9c76a9d818547e55413a518a14d.svg",
+    "static/media/arrowDown.svg": "/static/media/arrowDown.22cf16320557a23e40144865db217657.svg",
+    "main.8a561761.css.map": "/static/css/main.8a561761.css.map",
+    "main.2b46e0e6.js.map": "/static/js/main.2b46e0e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a561761.css",
+    "static/js/main.2b46e0e6.js"
+  ]
+}
