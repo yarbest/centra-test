@@ -18,6 +18,7 @@ const SearchModal = ({ isOpen, onClose, title, onSelect, options }: SearchModalP
   const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
   useEffect(() => setSearchValue(selectedOption?.value || ''), [selectedOption]);
+  useEffect(() => setSearchValue(''), []);
 
   const searchedOptions = useMemo(
     () => options.filter((option) => option.value.toLowerCase().includes(searchValue.toLowerCase())),
@@ -47,6 +48,7 @@ const SearchModal = ({ isOpen, onClose, title, onSelect, options }: SearchModalP
             onClick={() => {
               onSelect(option);
               setSelectedOption(option);
+              onClose(false);
             }}
             className={s.SearchModal__option}
             key={option.id}

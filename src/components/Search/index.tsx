@@ -73,13 +73,15 @@ const Search = () => {
         <SearchSVG />
       </Button>
 
-      <SearchModal
-        title={searchType || ''}
-        isOpen={searchModalOpen}
-        onClose={setSearchModalOpen}
-        onSelect={(option) => (searchType === 'To' ? handleSelectTo(option) : searchType === 'From' && handleSelectFrom(option))}
-        options={dropdownOptions}
-      />
+      {searchModalOpen && (
+        <SearchModal
+          title={searchType || ''}
+          isOpen={searchModalOpen}
+          onClose={setSearchModalOpen}
+          onSelect={(option) => (searchType === 'To' ? handleSelectTo(option) : searchType === 'From' && handleSelectFrom(option))}
+          options={dropdownOptions}
+        />
+      )}
     </div>
   );
 };
