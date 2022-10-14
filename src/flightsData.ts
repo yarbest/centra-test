@@ -28,7 +28,7 @@ export const data = [
     country: 'Warsaw',
     airport: 'Warsaw Chopin Airport',
     image: warsaw,
-    directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK'],
+    directConnections: ['BCN', 'MAD', 'ALC', 'CDG', 'CIA', 'DXB', 'AMS', 'LIS', 'LCY', 'WAW', 'WRO', 'JFK', '123', '321'],
     rating: 5,
     contraction: 'WAW',
     routes: [

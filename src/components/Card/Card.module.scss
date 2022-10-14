@@ -42,8 +42,13 @@
     padding: 3rem;
     transition: 0.5s;
     transform: translateY(57%);
+
+    @media (max-width: $medium-breakpoint) {
+      transform: translateY(60%);
+      padding: 1rem;
+    }
     @media (max-width: $small-breakpoint) {
-      transform: translateY(67%);
+      transform: translateY(68%);
       padding: 1rem;
     }
   }
