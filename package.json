@@ -1,5 +1,6 @@
 {
   "name": "centra-test",
+  "homepage": "https://yarbest.github.io/centra-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
